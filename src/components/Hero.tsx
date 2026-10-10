@@ -5,6 +5,10 @@ import tshirtImg from '../assets/images/nearbuy_black_tshirt_1791536476944.jpg';
 import bikeImg from '../assets/images/anyble_commuter_bike_1791535829216.jpg';
 import booksImg from '../assets/images/nearbuy_bookstore_owner_1791488312883.jpg';
 
+// Safe image component that guarantees the phone mockup image never breaks:
+// 1. First tries the imported asset from Vite
+// 2. If that fails, tries the public folder URL
+// 3. If that fails, shows a graceful placeholder graphic
 const SafePhoneImage: React.FC<{
   src: string;
   publicFallback: string;
@@ -22,6 +26,10 @@ const SafePhoneImage: React.FC<{
         if (!target.dataset.triedPublic) {
           target.dataset.triedPublic = 'true';
           target.src = publicFallback;
+        } else if (!target.dataset.triedFallback) {
+          target.dataset.triedFallback = 'true';
+          // Neutral green SVG placeholder so it never shows a broken icon
+          target.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23e7ede4'/><circle cx='80' cy='80' r='24' fill='%23164b35' opacity='0.25'/></svg>";
         }
       }}
     />
