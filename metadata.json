@@ -1,0 +1,6 @@
+{
+  "name": "Anyble — What you need might already be nearby",
+  "description": "Anyble is the local marketplace mobile app to buy, sell, and discover pre-loved items and local businesses in your neighborhood.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cabinet Grotesk', 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-brand: 'Cabinet Grotesk', 'Outfit', sans-serif;
+  --color-ink: #17211b;
+  --color-muted: #68736c;
+  --color-paper: #f7f5ef;
+  --color-card: #ffffff;
+  --color-brand-green: #164b35;
+  --color-brand-lime: #cce86b;
+  --color-brand-line: #dfe3dc;
+  --color-brand-accent: #e87d45;
+}
+
+:root {
+  --ink: #17211b;
+  --muted: #68736c;
+  --paper: #f7f5ef;
+  --card: #ffffff;
+  --green: #164b35;
+  --green-hover: #0f3626;
+  --lime: #cce86b;
+  --lime-hover: #bce045;
+  --line: #dfe3dc;
+  --accent: #e87d45;
+  --radius: 24px;
+
+  /* Color system aliases */
+  --brand-forest: #164b35;
+  --brand-forest-dark: #0f3626;
+  --brand-lime: #cce86b;
+  --brand-lime-vivid: #b4db48;
+  --brand-orange: #e87d45;
+  --brand-warm-bg: #f7f5ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Distinctive typography matching HTML website specimen */
+h1, h2, h3, h4, .font-display {
+  font-family: 'Cabinet Grotesk', 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+/* Button system matching HTML specimen */
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  font-size: 14px;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-dark {
+  background: var(--green);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 75, 53, 0.16);
+}
+.btn-dark:hover {
+  background: #0f3626;
+  box-shadow: 0 10px 25px rgba(22, 75, 53, 0.28);
+}
+
+.btn-light {
+  background: #ffffff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 6px rgba(23, 33, 27, 0.03);
+}
+.btn-light:hover {
+  border-color: #bcc6b9;
+  background: #faf9f5;
+  box-shadow: 0 8px 20px rgba(23, 33, 27, 0.07);
+}
+
+.btn-lime {
+  background: var(--lime);
+  color: var(--ink);
+  box-shadow: 0 4px 14px rgba(204, 232, 107, 0.25);
+}
+.btn-lime:hover {
+  background: #bce045;
+  box-shadow: 0 10px 25px rgba(204, 232, 107, 0.4);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(232, 125, 69, 0.25);
+}
+.btn-accent:hover {
+  background: #d66c34;
+  box-shadow: 0 10px 25px rgba(232, 125, 69, 0.35);
+}
+
+/* Eyebrow badge matching HTML specimen */
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  background: #e9efdf;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #67a45c;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Feature card matching HTML specimen */
+.feature-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 28px;
+  border-radius: var(--radius);
+  min-height: 220px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(23, 33, 27, 0.06);
+  border-color: #c7cfc3;
+}
+
+/* Floating card matching HTML specimen */
+.float-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 15px 17px;
+  box-shadow: 0 18px 45px rgba(25, 56, 43, 0.16);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Signature green tick circle */
+.tick-circle {
+  background: var(--green);
+  color: #ffffff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Ambient glow and backdrop glass surfaces */
+.glass-header {
+  background-color: rgba(247, 245, 239, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5cd;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a399;
+}
